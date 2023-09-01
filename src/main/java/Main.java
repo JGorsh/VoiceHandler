@@ -1,7 +1,10 @@
+import org.vosk.Model;
+import org.vosk.Recognizer;
+
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
+import java.nio.file.Files;
 import javax.sound.sampled.AudioFormat;
 import javax.sound.sampled.DataLine.Info;
 import javax.sound.sampled.SourceDataLine;
@@ -11,7 +14,24 @@ import static javax.sound.sampled.AudioFormat.Encoding.PCM_SIGNED;
 public class Main {
     public static void main(String[] args) throws Exception {
         File soundFile = new File("Будь Здоров.mp3");//Звуковой файл
-        voicePower(soundFile);
+        //voicePower(soundFile);
+        try (Model model = new Model("vosk-model-small-ru-0.22");
+             InputStream ais = AudioSystem.getAudioInputStream(new BufferedInputStream(Files.newInputStream(soundFile.toPath())));
+             Recognizer recognizer = new Recognizer(model, 16000)) {
+
+            int nbytes;
+            byte[] b = new byte[4096];
+            while ((nbytes = ais.read(b)) >= 0) {
+                if (recognizer.acceptWaveForm(b, nbytes)) {
+                    System.out.println(recognizer.getResult());
+                } else {
+                    System.out.println(recognizer.getPartialResult());
+                }
+            }
+
+            System.out.println(recognizer.getFinalResult());
+        }
+
         }
 
 

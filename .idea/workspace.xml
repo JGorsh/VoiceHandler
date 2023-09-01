@@ -5,8 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0e3cecef-0b44-4d21-bc5e-064f982d1173" name="Changes" comment="init">
+      <change afterPath="$PROJECT_DIR$/vosk-model-small-ru-0.22/README" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vosk-model-small-ru-0.22/am/final.mdl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vosk-model-small-ru-0.22/conf/mfcc.conf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vosk-model-small-ru-0.22/conf/model.conf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vosk-model-small-ru-0.22/graph/Gr.fst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vosk-model-small-ru-0.22/graph/HCLr.fst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vosk-model-small-ru-0.22/graph/disambig_tid.int" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vosk-model-small-ru-0.22/graph/phones/word_boundary.int" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vosk-model-small-ru-0.22/ivector/final.dubm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vosk-model-small-ru-0.22/ivector/final.ie" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vosk-model-small-ru-0.22/ivector/final.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vosk-model-small-ru-0.22/ivector/global_cmvn.stats" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vosk-model-small-ru-0.22/ivector/online_cmvn.conf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vosk-model-small-ru-0.22/ivector/splice.conf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +84,15 @@
       <option name="project" value="LOCAL" />
       <updated>1693567550003</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="init">
+      <option name="closed" value="true" />
+      <created>1693567977710</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1693567977710</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
