@@ -11,6 +11,17 @@ import static javax.sound.sampled.AudioFormat.Encoding.PCM_SIGNED;
 public class Main {
     public static void main(String[] args) throws Exception {
         File soundFile = new File("Будь Здоров.mp3");//Звуковой файл
+        voicePower(soundFile);
+        }
+
+
+    public static void stream(AudioInputStream in, SourceDataLine line) throws IOException {
+        final byte[] buffer = new byte[4096];
+        for (int n = 0; n != -1; n = in.read(buffer, 0, buffer.length)) {
+            line.write(buffer, 0, n);
+        }
+    }
+    public static void voicePower(File soundFile)throws Exception{
         AudioInputStream ais = AudioSystem.getAudioInputStream(soundFile);//Получаем AudioInputStream
         int ch = ais.getFormat().getChannels();
         final float rate = ais.getFormat().getSampleRate();
@@ -18,24 +29,14 @@ public class Main {
         final Info info = new Info(SourceDataLine.class, outFormat);
         final SourceDataLine line = (SourceDataLine) AudioSystem.getLine(info);
 
-            if (line != null) {
-                line.open(outFormat);
-                line.start();
-                stream(getAudioInputStream(outFormat, ais), line);
-                line.drain();
-                line.stop();
-            }
-        }
- public static void stream(AudioInputStream in, SourceDataLine line) throws IOException {
-        final byte[] buffer = new byte[4096];
-        for (int n = 0; n != -1; n = in.read(buffer, 0, buffer.length)) {
-            line.write(buffer, 0, n);
+        if (line != null) {
+            line.open(outFormat);
+            line.start();
+            stream(getAudioInputStream(outFormat, ais), line);
+            line.drain();
+            line.stop();
         }
     }
 }
 
 
-//        Clip clip = AudioSystem.getClip();//Получаем реализацию интерфейса Clip
-//        clip.open(ais);//Загружаем наш звуковой поток в Clip
-//        clip.setFramePosition(0); //устанавливаем указатель на старт
-//        clip.start(); //Поехали!!!
