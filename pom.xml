@@ -24,6 +24,14 @@
       <artifactId>vorbisspi</artifactId>
       <version>1.0.3-1</version>
     </dependency>
+
+    <!-- https://mvnrepository.com/artifact/com.alphacephei/vosk -->
+    <dependency>
+      <groupId>com.alphacephei</groupId>
+      <artifactId>vosk</artifactId>
+      <version>0.3.45</version>
+    </dependency>
+
   </dependencies>
 
 </project>
